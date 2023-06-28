@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
+        nav{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 0 20px;
+            background-color: #1B6B93;
+            align-items: baseline;
+            box-sizing: border-box;
+        }
+
+        nav h1{
+            display: inline-block;
+            margin-right: 20px;
+            color: #A2FF86;
+        }
+
+        nav ul{
+            font-weight: bold;
+            color: #4FC0D0;
+            box-sizing: border-box;
+            display: relative;
+        }
+
+        nav ul li{
+            display: inline-block;
+            padding: 25px;
+            transition: .5s;
+        }
+
+        nav ul li ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        nav ul li ul{
+            transform: scaleY(0);
+            position: absolute;
+            border: 1px solid white;
+            margin: 25px 0 0 -25px;
+            transition: .3s;
+        }
+
+        nav ul li ul li{
+            padding: 20px 40px 20px 10px;
+        }
+
+        nav ul li:hover{
+            background-color: #164B60;
+        }
+
+        nav ul li:hover ul{
+            display: flex;
+            flex-direction: column;
+            transform: scaleY(1);
+        }
+        nav ul li:hover li{
+            background-color: #1B6B93;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>WEB NAVIGATION</h1>
+        <ul>
+            <li>Home
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>About
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>Product
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>Service
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>Contact
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

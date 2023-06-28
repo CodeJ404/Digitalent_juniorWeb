@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Web</title>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #A2FF86;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1{
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        table{
+            width: 350px;
+            background-color: #4FC0D0;
+            border: 2px solid #1B6B93;
+            border-radius: 20px;
+        }
+
+        table tr td{
+            padding: 10px;
+        }
+
+        table form{
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Membuat Formulir</h1>
+        </header>
+        <table border="0" cellspacing="0" cellpadding="10">
+            <tr>
+                <td><label for="text">Username : </label></td>
+                <td>
+                    <form>
+                        <input type="text" id="text">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password : </label></td>
+                <td>
+                    <form>
+                        <input type="password" id="password">
+                    </form>
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <form>
+                        <label for="radio1">Pria</label>
+                        <input type="radio" id="radio1" name="radio">
+                        <label for="radio2">Wanita</label>
+                        <input type="radio" id="radio2" name="radio">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <form>
+                        <label for="checkbox1">Tugas 1</label><input type="checkbox" id="checkbox1">
+                        <label for="checkbox2">Tugas 2</label><input type="checkbox" id="checkbox2">
+                        <label for="checkbox3">Tugas 3</label><input type="checkbox" id="checkbox2">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="combobox">Asal Kota : </label></td>
+                <td>
+                    <form>
+                        <select id="combobox">
+                            <option value="select">Tangerang</option>
+                            <option value="select">Bandung</option>
+                            <option value="select">Jakarta</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="textarea">Tanggapan : </label></td>
+                <td>
+                    <form>
+                        <textarea id="textarea" cols="20" rows="2"></textarea>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <form>
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>    
+
+</body>
+</html>

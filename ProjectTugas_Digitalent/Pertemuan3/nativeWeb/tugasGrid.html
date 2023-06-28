@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Grid</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            background-color: #A2FF86;
+        }
+
+        nav{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 0 20px;
+            background-color: #1B6B93;
+            align-items: baseline;
+            box-sizing: border-box;
+        }
+
+        nav h1{
+            display: inline-block;
+            margin-right: 20px;
+            color: #A2FF86;
+        }
+
+        nav ul{
+            font-weight: bold;
+            color: #4FC0D0;
+            box-sizing: border-box;
+            display: relative;
+        }
+
+        nav ul li{
+            display: inline-block;
+            padding: 25px;
+            transition: .5s;
+        }
+
+        nav ul li ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        nav ul li ul{
+            transform: scaleY(0);
+            position: absolute;
+            border: 1px solid white;
+            margin: 25px 0 0 -25px;
+            transition: .3s;
+        }
+
+        nav ul li ul li{
+            padding: 20px 40px 20px 10px;
+        }
+
+        nav ul li:hover{
+            background-color: #164B60;
+        }
+
+        nav ul li:hover ul{
+            display: flex;
+            flex-direction: column;
+            transform: scaleY(1);
+        }
+        nav ul li:hover li{
+            background-color: #1B6B93;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .container table{
+            margin-top: 30px;
+            margin-left: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            width: 350px;
+            background-color: #4FC0D0;
+            border: 2px solid #1B6B93;
+            border-radius: 20px;
+        }
+
+        .container table tr td{
+            padding: 10px;
+        }
+
+        .container table form{
+            padding: 10px;
+        }
+
+        .container img{
+            width: 200px;
+            height: 200px;
+            border-radius: 30px;
+        }
+
+        footer{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 30px;
+            background-color: #164B60;
+        }
+
+        footer p {
+            font-size: 13px;
+            width: 300px;
+            text-align: justify;
+            padding: 20px;
+            color: #fff;
+        }
+        footer h1{
+
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav>
+        <h1>WEB NAVIGATION</h1>
+        <ul>
+            <li>Home
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>About
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>Product
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>Service
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+            <li>Contact
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <table border="0" cellspacing="0" cellpadding="10">
+            <tr>
+                <td><label for="text">Username : </label></td>
+                <td>
+                    <form>
+                        <input type="text" id="text">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password : </label></td>
+                <td>
+                    <form>
+                        <input type="password" id="password">
+                    </form>
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <form>
+                        <label for="radio1">Pria</label>
+                        <input type="radio" id="radio1" name="radio">
+                        <label for="radio2">Wanita</label>
+                        <input type="radio" id="radio2" name="radio">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <form>
+                        <label for="checkbox1">Tugas 1</label><input type="checkbox" id="checkbox1">
+                        <label for="checkbox2">Tugas 2</label><input type="checkbox" id="checkbox2">
+                        <label for="checkbox3">Tugas 3</label><input type="checkbox" id="checkbox2">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="combobox">Asal Kota : </label></td>
+                <td>
+                    <form>
+                        <select id="combobox">
+                            <option value="select">Tangerang</option>
+                            <option value="select">Bandung</option>
+                            <option value="select">Jakarta</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="textarea">Tanggapan : </label></td>
+                <td>
+                    <form>
+                        <textarea id="textarea" cols="20" rows="2"></textarea>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <form>
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+        <img src="../gambar/author.jpg" alt="Author" title="@Copyrigth JiarJihad">
+    </div>    
+
+    <footer>
+        <h1>About Me</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur doloribus atque impedit maiores animi beatae eaque quidem ab minus earum. Eligendi illo corrupti soluta quos. </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aut, nobis ab in ipsam minima magni repellendus odit soluta totam ad, recusandae id ipsa eligendi omnis. Voluptatibus sequi molestiae fugit!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptas rerum voluptatum fuga sapiente?</p>
+    </footer>
+</body>
+</html>
