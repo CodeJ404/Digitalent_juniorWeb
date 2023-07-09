@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      top: 200px;
+      margin : 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      background-color: #4CAF50;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="myForm">
+      <div class="form-group">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <input type="submit" value="Submit" onclick="submitForm()">
+    </form>
+  </div>
+
+  <script>
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+
+      if (name === "" || email === "") {
+        alert("Harap isi semua field!");
+      } else {
+        var confirmation = confirm("Apakah Anda yakin ingin mengirim form ini?");
+        if (confirmation) {
+          alert("Form berhasil dikirim!");
+          // Lakukan tindakan lainnya, seperti mengirim data ke server, dll.
+        } else {
+          alert("Pengiriman form dibatalkan.");
+        }
+      }
+    }
+  </script>
+</body>
+</html>

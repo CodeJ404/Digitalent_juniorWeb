@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1{
+        text-align: center;
+    }
+    .container{
+        width: 400px;
+        display: block;
+        background-color: #7daaff;
+        position: relative;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .todo-list {
+      margin: 20px;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .todo-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .delete-btn {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #ff4136;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body onload="loadFunction()">
+  <h1>Todo List</h1>
+  <div class="container">
+  <form id="todoForm" onsubmit="addTodoItem(event)">
+    <input type="text" id="todoInput" placeholder="Tambahkan tugas" required>
+    <input type="submit" value="Tambah">
+  </form>
+
+  <div id="todoList" class="todo-list"></div>
+  </div>
+  <script>
+    function loadFunction() {
+      alert("Aplikasi Todo List berhasil dimuat!");
+    }
+
+    function addTodoItem(event) {
+      event.preventDefault();
+      
+      var todoInput = document.getElementById("todoInput");
+      var todoText = todoInput.value;
+
+      if (todoText !== "") {
+        var todoList = document.getElementById("todoList");
+
+        var todoItem = document.createElement("div");
+        todoItem.className = "todo-item";
+
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.onchange = function() {
+          updateTodoStatus(this);
+        };
+
+        var todoTextElement = document.createElement("span");
+        todoTextElement.innerText = todoText;
+
+        var deleteBtn = document.createElement("button");
+        deleteBtn.className = "delete-btn";
+        deleteBtn.innerText = "Hapus";
+        deleteBtn.onclick = function() {
+          deleteTodoItem(this);
+        };
+
+        todoItem.appendChild(checkbox);
+        todoItem.appendChild(todoTextElement);
+        todoItem.appendChild(deleteBtn);
+
+        todoList.appendChild(todoItem);
+
+        todoInput.value = "";
+      }
+    }
+
+    function updateTodoStatus(checkbox) {
+      var todoTextElement = checkbox.nextSibling;
+      if (checkbox.checked) {
+        todoTextElement.style.textDecoration = "line-through";
+      } else {
+        todoTextElement.style.textDecoration = "none";
+      }
+    }
+
+    function deleteTodoItem(deleteBtn) {
+      var todoItem = deleteBtn.parentNode;
+      var todoList = todoItem.parentNode;
+      todoList.removeChild(todoItem);
+    }
+  </script>
+</body>
+</html>
